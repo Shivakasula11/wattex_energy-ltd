@@ -1,18 +1,20 @@
 import Home2 from '../assets/home2.jpg';
 import Housing from '../assets/housing.jpeg';
-import Home3 from '../assets/home3.jpeg';
+import Home3 from '../assets/Home3.jpeg';
 import Blog3 from '../assets/blog3.png';
 import commercial1 from '../assets/commercial1.jpg';
 import solarfinance from '../assets/solarfinance.png';
 import Evcar from '../assets/evcar.png';
-import Battery from '../assets/battery.png';
+import Battery from '../assets/Battery.png';
 import Solarnetmeter from '../assets/solarnetmeter.png';
 import Kamakshi from '../assets/kamakshi.png';
-import BlogsRoi from '../assets/blogsroi.png';
-import Solarmonsoon from '../assets/solarmonsoon.png';
+import BlogsRoi from '../assets/BlogsRoi.png';
+import Solarmonsoon from '../assets/Solarmonsoon.png';
 import Solarcalculator from '../assets/solarcalculator.png';
 import solarpanelmaintenance from '../assets/solarpanelmaintance.png';
 import Ecoresorts from '../assets/Ecoresorts.png';
+
+
 const BLOGS = [
   {
     id: 'pm-surya-ghar-guide',
