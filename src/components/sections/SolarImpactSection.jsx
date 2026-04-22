@@ -1,8 +1,8 @@
 import React from 'react';
-import Battery from '../../assets/battery-tech.png';
+import Battery from '../../assets/Battery-tech.png';
 import Commercial from '../../assets/commercial3.jpg';
-import  Environment from '../../assets/environment.png';
-import Home3 from '../../assets/home3.jpeg';
+import  Environment from '../../assets/Environment.png';
+import Home3 from '../../assets/Home3.jpeg';
 const SolarImpactSection = () => (
   <section className="py-32 bg-white overflow-hidden">
     <div className="container mx-auto px-6">
