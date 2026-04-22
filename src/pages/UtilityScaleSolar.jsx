@@ -6,7 +6,7 @@ import kamakshi from "../assets/kamakshi.png";
 import Balaji from "../assets/Balaji.png";
 import Balajiarc from "../assets/Balajiarc.png";
 import Home2 from "../assets/home2.jpg";
-import environment from "../assets/environment.png";
+import environment from "../assets/Environment.png";
 import utilitywind from "../assets/utilitywind.png";
 import utilitysolar from "../assets/utilitysolar.png";
 
