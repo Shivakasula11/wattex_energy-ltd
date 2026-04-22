@@ -4,17 +4,16 @@ import SEOHead from "../components/seo/SEOHead";
 import OffGridFaqSection from "../components/sections/OffGridFaqSection";
 import commercial2 from "../assets/commercial2.jpg";
 import remote from "../assets/remote.png";
-import telecom from "../assets/telecom.png";
+
+import telecom from "../assets/Telecom.png";
 import Resorts from "../assets/Resorts.png";
 import agriculture from "../assets/agriculture.png";
 import remoteinfra from "../assets/remoteinfra.png";
-import EcoResorts from "../assets/EcoResorts.png";
+
+import EcoResorts from "../assets/Ecoresorts.png";
 import Battery from "../assets/Battery-tech.png";
 import housingfaq from "../assets/housingfaq.png";
 const OffGridSolar = () => {
-
-  
-
   return (
     <div className="bg-white text-[#0F172A]">
       <SEOHead
@@ -555,7 +554,6 @@ const OffGridSolar = () => {
                     >
                       {plan.price}
                     </div>
-                    
                   </div>
                 </div>
               </div>
@@ -762,7 +760,7 @@ const OffGridSolar = () => {
       <section
         className="relative h-auto min-h-[60vh] md:min-h-[70vh] bg-center bg-cover overflow-hidden"
         style={{
-           backgroundImage: `url(${Battery})`,
+          backgroundImage: `url(${Battery})`,
         }}
       >
         <div className="absolute inset-0 bg-[#0F172A]/80 backdrop-blur-[2px]"></div>
