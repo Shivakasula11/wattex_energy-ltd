@@ -4,7 +4,6 @@ import SEOHead from '../components/seo/SEOHead';
 import HousingSocietyFaqSection from "../components/sections/HousingSocietyFaqSection";
 import housingSociety from '../assets/housing.jpeg';
 import housingSociety3 from '../assets/housing3.jpg';
-import Resorts from '../assets/resorts.png';
 import Housingreview from '../assets/housingreview.png';
 import Housingreview1 from '../assets/housingreview1.png';
 import Housingreview2 from '../assets/housingreview2.png';
@@ -129,7 +128,7 @@ const HousingSociety = () => {
             <div className="relative">
               <div className="rounded-[4rem] overflow-hidden shadow-4xl aspect-[4/5]">
                 <img
-                  src={Resorts}
+                  src={housingSociety3}
                   className="w-full h-full object-cover"
                   alt="Apartment Solar"
                 />
