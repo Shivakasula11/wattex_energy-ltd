@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SEOHead from "../components/seo/SEOHead";
-import Balajiarc from "../assets/balajiarc.png";
 import Projects from "../assets/projects.png";
+import Balajiarc from "../assets/Balajiarc.png";
 import Commercial2 from "../assets/commercial2.jpg";
 import Greentech from "../assets/greentech.png";
-import Ecoresorts from "../assets/ecoresorts.png";
+import Ecoresorts from "../assets/Ecoresorts.png";
 import Home2 from "../assets/home2.jpg";
-import Autozone from "../assets/autozone.png";
-import AbhiTowers from "../assets/abhitowers.png";
-import KrishnanSLR from "../assets/krishnanslr.png";
+import Autozone from "../assets/Autozone.png";
+import AbhiTowers from "../assets/Abhitowers.png";
+import KrishnanSLR from "../assets/krishnanSlr.png";
+
 const CATEGORIES = [
   "All",
   "Residential",
