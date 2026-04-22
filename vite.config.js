@@ -6,23 +6,26 @@ export default defineConfig({
   plugins: [
     react(),
     Sitemap({
-      hostname: 'https://wattexenergy.com',
+      hostname: 'https://wattexenergy.in',
+      outDir: 'dist',
       dynamicRoutes: [
         '/',
-        '/residential',
-        '/commercial',
-        '/housing',
-        '/on-grid',
-        '/off-grid',
-        '/utility-scale',
-        '/calculator',
-        '/blogs',
-        '/projects',
+        '/about',
         '/contact',
-      ],
-      changefreq: 'weekly',
-      priority: 0.8,
-      lastmod: new Date(),
-    }),
+        '/residential-solar',
+        '/commercial-solar',
+        '/on-grid-solar',
+        '/off-grid-solar',
+        '/utility-scale-solar',
+        '/housing-society',
+        '/our-projects',
+        '/solar-calculator',
+        '/blogs'
+      ]
+    })
   ],
+  build: {
+    outDir: 'dist',
+    emptyOutDir: true,
+  },
 })
