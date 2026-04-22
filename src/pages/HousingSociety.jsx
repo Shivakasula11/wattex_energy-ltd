@@ -4,9 +4,10 @@ import SEOHead from '../components/seo/SEOHead';
 import HousingSocietyFaqSection from "../components/sections/HousingSocietyFaqSection";
 import housingSociety from '../assets/housing.jpeg';
 import housingSociety3 from '../assets/housing3.jpg';
-import Housingreview from '../assets/housingreview.png';
-import Housingreview1 from '../assets/housingreview1.png';
-import Housingreview2 from '../assets/housingreview2.png';
+import Housingreview from '../assets/Housingreview.png';
+import resortsImg from '../assets/Resorts.png';
+import Housingreview1 from '../assets/Housingreview1.png';
+import Housingreview2 from '../assets/Housingreview2.png';
 const HousingSociety = () => {
   const navigate = useNavigate();
 
@@ -128,7 +129,7 @@ const HousingSociety = () => {
             <div className="relative">
               <div className="rounded-[4rem] overflow-hidden shadow-4xl aspect-[4/5]">
                 <img
-                  src={housingSociety3}
+                  src={resortsImg}
                   className="w-full h-full object-cover"
                   alt="Apartment Solar"
                 />
