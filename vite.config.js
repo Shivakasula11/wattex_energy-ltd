@@ -8,6 +8,7 @@ export default defineConfig({
     Sitemap({
       hostname: 'https://wattexenergy.in',
       outDir: 'dist',
+      generateRobotsTxt: false,
       dynamicRoutes: [
         '/',
         '/about',
