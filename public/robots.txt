@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://wattexenergy.com/sitemap.xml
+
+# Disallow dev/internal paths
+Disallow: /src/
+Disallow: /.env
