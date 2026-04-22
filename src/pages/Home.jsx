@@ -6,7 +6,7 @@ import ParallaxSection from '../components/ui/ParallaxSection';
 import SolarProcessSection from '../components/sections/SolarProcessSection';
 import ServicesGrid from '../components/sections/ServicesGrid';
 import Home2 from '../assets/home2.jpg';
-import Abhitowers from '../assets/abhitowers.png';
+import abhitowers from '../assets/kamakshi.png';
 const Home = () => {
   return (
     <>
@@ -81,7 +81,7 @@ const Home = () => {
       <WhyChooseUsSection />
 
       <ParallaxSection
-        image={Abhitowers}
+        image={abhitowers}
         title="Urban Integration"
         subtitle="Seamlessly blending high-efficiency solar technology into modern architecture and city infrastructure."
       />
