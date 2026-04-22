@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import coursel2 from '../../assets/coursel2.png';
-import Home1 from '../../assets/home1.jpg';
+import Home1 from '../../assets/Home1.jpg';
 import Home2 from '../../assets/home2.jpg';
-import Home3 from '../../assets/home3.jpeg';
+import Home3 from '../../assets/Home3.jpeg';
 
 const slides = [
   {
