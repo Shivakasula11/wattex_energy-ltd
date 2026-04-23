@@ -1,90 +1,364 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import Box from "@mui/material/Box";
 
 const Footer = () => {
-  return (
-    <footer className="bg-solar-deep py-24 border-t border-white/5 text-white">
-      <div className="container mx-auto px-6 grid lg:grid-cols-4 gap-16">
-        <div className="col-span-2">
-          <Link to="/" className="flex items-center gap-4">
-          
+  const theme = useTheme();
 
-<div
-  style={{
-    background: "linear-gradient(135deg, #e8405a, #c72d45)",
-    borderRadius: "14px",
-    width: "44px",
-    height: "44px",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    flexShrink: 0,
-    boxShadow: "0 4px 16px rgba(232, 64, 90, 0.35)",
-  }}
->
-  <span
-    style={{
-      color: "white",
-      fontWeight: 900,
-      fontSize: "22px",
-      fontFamily: "'Montserrat', 'Arial Black', sans-serif",
-    }}
-  >
-    W
-  </span>
-</div>
-<span
-  style={{
-    fontFamily: "'Montserrat', 'Arial Black', sans-serif",
-    fontSize: "26px",
-    fontWeight: 900,
-    letterSpacing: "0.5px",
-    lineHeight: 1,
-  }}
->
-  <span style={{ color: "#ffffff" }}>WATTEX</span>
-  <span style={{ color: "#e8405a" }}>ENERGY</span>
-</span>
+  // Breakpoints
+  const isSmartwatch = useMediaQuery("(max-width:240px)");
+  const isMobileS = useMediaQuery("(min-width:241px) and (max-width:380px)");
+  const isMobileM = useMediaQuery("(min-width:381px) and (max-width:480px)");
+  const isMobileL = useMediaQuery("(min-width:481px) and (max-width:600px)");
+  const isTabletPortrait = useMediaQuery("(min-width:601px) and (max-width:768px)");
+  const isTabletLandscape = useMediaQuery("(min-width:769px) and (max-width:1024px)");
+  const isSmallLaptop = useMediaQuery("(min-width:1025px) and (max-width:1280px)");
+  const isDesktop = useMediaQuery("(min-width:1281px)");
+
+  // Derived helpers
+  const isMobileAny = isSmartwatch || isMobileS || isMobileM;
+  const isPhablet = isMobileL;
+  const isTabletAny = isTabletPortrait || isTabletLandscape;
+
+  // Responsive values — MEDIUM height
+  const footerPadding = isSmartwatch
+    ? "18px 8px"
+    : isMobileS
+    ? "24px 12px"
+    : isMobileM
+    ? "28px 16px"
+    : isPhablet
+    ? "32px 20px"
+    : isTabletPortrait
+    ? "38px 24px"
+    : isTabletLandscape
+    ? "44px 32px"
+    : isSmallLaptop
+    ? "56px 40px"
+    : "72px 48px";
+
+  const gridLayout = isSmartwatch || isMobileS || isMobileM
+    ? "1fr"
+    : isPhablet
+    ? "1fr"
+    : isTabletPortrait
+    ? "1fr 1fr"
+    : isTabletLandscape
+    ? "1fr 1fr"
+    : isSmallLaptop
+    ? "2fr 1fr 1fr"
+    : "2fr 1fr 1fr";
+
+  const gridGap = isSmartwatch
+    ? "16px"
+    : isMobileAny
+    ? "22px"
+    : isPhablet
+    ? "26px"
+    : isTabletAny
+    ? "30px"
+    : "48px";
+
+  const brandFontSize = isSmartwatch
+    ? "14px"
+    : isMobileS
+    ? "18px"
+    : isMobileM
+    ? "20px"
+    : isPhablet
+    ? "22px"
+    : "26px";
+
+  const logoSize = isSmartwatch
+    ? "28px"
+    : isMobileS
+    ? "34px"
+    : isMobileM
+    ? "38px"
+    : isPhablet
+    ? "40px"
+    : "44px";
+
+  const logoRadius = isSmartwatch ? "8px" : isMobileS ? "10px" : "14px";
+
+  const logoLetterSize = isSmartwatch
+    ? "14px"
+    : isMobileS
+    ? "17px"
+    : isMobileM
+    ? "19px"
+    : "22px";
+
+  const descFontSize = isSmartwatch
+    ? "11px"
+    : isMobileS
+    ? "12px"
+    : isMobileM
+    ? "13px"
+    : isPhablet
+    ? "14px"
+    : isTabletPortrait
+    ? "15px"
+    : "18px";
+
+  const headingFontSize = isSmartwatch
+    ? "9px"
+    : isMobileS
+    ? "10px"
+    : "12px";
+
+  const linkFontSize = isSmartwatch
+    ? "11px"
+    : isMobileS
+    ? "12px"
+    : isMobileM
+    ? "13px"
+    : isPhablet
+    ? "13px"
+    : "14px";
+
+  const socialSize = isSmartwatch
+    ? "28px"
+    : isMobileS
+    ? "32px"
+    : isMobileM
+    ? "36px"
+    : "40px";
+
+  const socialGap = isSmartwatch
+    ? "8px"
+    : isMobileS
+    ? "10px"
+    : isMobileM
+    ? "14px"
+    : "24px";
+
+  const socialRadius = isSmartwatch ? "6px" : "8px";
+
+  const copyrightDirection = isMobileAny || isPhablet ? "column" : "row";
+
+  const copyrightFontSize = isSmartwatch
+    ? "9px"
+    : isMobileS
+    ? "10px"
+    : isMobileM
+    ? "11px"
+    : isPhablet
+    ? "12px"
+    : "14px";
+
+  const contactFontSize = isSmartwatch
+    ? "11px"
+    : isMobileS
+    ? "12px"
+    : isMobileM
+    ? "13px"
+    : isPhablet
+    ? "13px"
+    : "14px";
+
+  const linkSpacing = isSmartwatch ? "6px" : isMobileAny ? "8px" : "14px";
+
+  const sectionHeadingMb = isSmartwatch
+    ? "10px"
+    : isMobileAny
+    ? "14px"
+    : isPhablet
+    ? "16px"
+    : "24px";
+
+  const brandColSpan =
+    isSmartwatch || isMobileAny || isPhablet || isTabletPortrait || isTabletLandscape
+      ? "auto"
+      : "span 1";
+
+  return (
+    <Box
+      component="footer"
+      className="bg-solar-deep border-t border-white/5 text-white"
+      sx={{
+        padding: footerPadding,
+        width: "100%",
+        boxSizing: "border-box",
+        overflow: "hidden",
+      }}
+    >
+      {/* Main Grid */}
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: gridLayout,
+          gap: gridGap,
+          maxWidth: isDesktop ? "1440px" : "100%",
+          margin: "0 auto",
+          width: "100%",
+        }}
+      >
+        {/* Brand Column */}
+        <Box
+          sx={{
+            gridColumn:
+              isSmallLaptop || isDesktop ? "span 1" : brandColSpan,
+          }}
+        >
+          <Link
+            to="/"
+            className="flex items-center"
+            style={{
+              gap: isSmartwatch ? "6px" : isMobileS ? "8px" : "16px",
+              textDecoration: "none",
+              flexWrap: "nowrap",
+            }}
+          >
+            <div
+              style={{
+                background: "linear-gradient(135deg, #e8405a, #c72d45)",
+                borderRadius: logoRadius,
+                width: logoSize,
+                height: logoSize,
+                minWidth: logoSize,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexShrink: 0,
+                boxShadow: "0 4px 16px rgba(232, 64, 90, 0.35)",
+              }}
+            >
+              <span
+                style={{
+                  color: "white",
+                  fontWeight: 900,
+                  fontSize: logoLetterSize,
+                  fontFamily: "'Montserrat', 'Arial Black', sans-serif",
+                }}
+              >
+                W
+              </span>
+            </div>
+            <span
+              style={{
+                fontFamily: "'Montserrat', 'Arial Black', sans-serif",
+                fontSize: brandFontSize,
+                fontWeight: 900,
+                letterSpacing: isSmartwatch ? "0px" : "0.5px",
+                lineHeight: 1,
+                whiteSpace: "nowrap",
+              }}
+            >
+              <span style={{ color: "#ffffff" }}>WATTEX</span>
+              <span style={{ color: "#e8405a" }}>ENERGY</span>
+            </span>
           </Link>
-          <p className="text-white/40 text-lg leading-relaxed max-w-sm mt-3">
+
+          <Box
+            component="p"
+            className="text-white/40"
+            sx={{
+              fontSize: descFontSize,
+              lineHeight: 1.7,
+              maxWidth: isSmartwatch ? "100%" : isMobileAny ? "260px" : "380px",
+              marginTop: isSmartwatch ? "8px" : "10px",
+            }}
+          >
             Engineering a carbon-neutral world through industrial-grade solar
             infrastructure.
-          </p>
-          <div className="flex gap-6 pt-4">
+          </Box>
+
+          {/* Social Icons */}
+          <Box
+            sx={{
+              display: "flex",
+              gap: socialGap,
+              paddingTop: isSmartwatch ? "10px" : "14px",
+              flexWrap: "wrap",
+            }}
+          >
             <a
               href="https://www.instagram.com/wattexenergy?igsh=MTZwZm9mbnBoemFvNg=="
-              className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-white/40 hover:bg-solar-primary hover:text-white transition-all"
+              className="flex items-center justify-center text-white/40 hover:bg-solar-primary hover:text-white transition-all"
               aria-label="Instagram"
+              style={{
+                width: socialSize,
+                height: socialSize,
+                borderRadius: socialRadius,
+                background: "rgba(255,255,255,0.05)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                minWidth: socialSize,
+              }}
             >
               <i className="fab fa-instagram"></i>
             </a>
             <a
               href="#"
-              className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-white/40 hover:bg-solar-primary hover:text-white transition-all"
+              className="flex items-center justify-center text-white/40 hover:bg-solar-primary hover:text-white transition-all"
               aria-label="LinkedIn"
+              style={{
+                width: socialSize,
+                height: socialSize,
+                borderRadius: socialRadius,
+                background: "rgba(255,255,255,0.05)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                minWidth: socialSize,
+              }}
             >
               <i className="fab fa-linkedin-in"></i>
             </a>
             <a
               href="https://x.com/wattexenergy"
-              className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-white/40 hover:bg-solar-primary hover:text-white transition-all"
+              className="flex items-center justify-center text-white/40 hover:bg-solar-primary hover:text-white transition-all"
               aria-label="Twitter"
+              style={{
+                width: socialSize,
+                height: socialSize,
+                borderRadius: socialRadius,
+                background: "rgba(255,255,255,0.05)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                minWidth: socialSize,
+              }}
             >
               <i className="fab fa-twitter"></i>
             </a>
-          </div>
-        </div>
+          </Box>
+        </Box>
 
+        {/* Solutions Column */}
         <div>
-          <h4 className="text-white font-black uppercase tracking-widest text-xs mb-8">
+          <Box
+            component="h4"
+            className="text-white font-black uppercase tracking-widest"
+            sx={{
+              fontSize: headingFontSize,
+              marginBottom: sectionHeadingMb,
+            }}
+          >
             Solutions
-          </h4>
-          <ul className="space-y-4 text-white/40 font-bold text-sm">
+          </Box>
+          <Box
+            component="ul"
+            className="text-white/40 font-bold"
+            sx={{
+              listStyle: "none",
+              padding: 0,
+              margin: 0,
+              display: "flex",
+              flexDirection: "column",
+              gap: linkSpacing,
+              fontSize: linkFontSize,
+            }}
+          >
             <li>
               <Link
                 to="/commercial"
                 className="hover:text-white transition-colors"
+                style={{ color: "inherit", textDecoration: "none" }}
               >
                 Commercial Solar
               </Link>
@@ -93,6 +367,7 @@ const Footer = () => {
               <Link
                 to="/residential"
                 className="hover:text-white transition-colors"
+                style={{ color: "inherit", textDecoration: "none" }}
               >
                 Residential Rooftop
               </Link>
@@ -101,47 +376,62 @@ const Footer = () => {
               <Link
                 to="/utility-scale"
                 className="hover:text-white transition-colors"
+                style={{ color: "inherit", textDecoration: "none" }}
               >
                 Utility Scale Plants
               </Link>
             </li>
-
-
             <li>
               <Link
                 to="/housing"
                 className="hover:text-white transition-colors"
+                style={{ color: "inherit", textDecoration: "none" }}
               >
                 Housing Society
               </Link>
             </li>
-
-
             <li>
               <Link
                 to="/off-grid"
                 className="hover:text-white transition-colors"
+                style={{ color: "inherit", textDecoration: "none" }}
               >
                 Off-grid Solutions
               </Link>
             </li>
-
             <li>
               <Link
                 to="/on-grid"
                 className="hover:text-white transition-colors"
+                style={{ color: "inherit", textDecoration: "none" }}
               >
                 On-grid Solutions
               </Link>
             </li>
-          </ul>
+          </Box>
         </div>
 
+        {/* Contact Column */}
         <div>
-          <h4 className="text-white font-black uppercase tracking-widest text-xs mb-8">
+          <Box
+            component="h4"
+            className="text-white font-black uppercase tracking-widest"
+            sx={{
+              fontSize: headingFontSize,
+              marginBottom: sectionHeadingMb,
+            }}
+          >
             Contact
-          </h4>
-          <p className="text-white/40 font-bold text-sm leading-relaxed">
+          </Box>
+          <Box
+            component="p"
+            className="text-white/40 font-bold"
+            sx={{
+              fontSize: contactFontSize,
+              lineHeight: 1.8,
+              wordBreak: "break-word",
+            }}
+          >
             Survey No:64, Building Number 9,
             <br />
             13th Floor, We Work,
@@ -149,27 +439,64 @@ const Footer = () => {
             K Raheja Mindspace, Madhapur,
             <br />
             Hyderabad, Telangana 500081
-          </p>
-          <p className="text-white/40 font-bold text-sm mt-4">
+          </Box>
+          <Box
+            component="p"
+            className="text-white/40 font-bold"
+            sx={{
+              fontSize: contactFontSize,
+              marginTop: isSmartwatch ? "10px" : "14px",
+              wordBreak: "break-word",
+            }}
+          >
             9133066113
             <br />
-            info@wattexenergy.in
-          </p>
+            info@wattex.in
+          </Box>
         </div>
-      </div>
+      </Box>
 
       {/* Copyright Bar */}
-      <div className="border-t border-white/5 mt-16">
-        <div className="container mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-white/30 text-sm">
+      <Box
+        sx={{
+          borderTop: "1px solid rgba(255,255,255,0.05)",
+          marginTop: isSmartwatch ? "16px" : isMobileAny ? "22px" : isPhablet ? "28px" : "48px",
+        }}
+      >
+        <Box
+          sx={{
+            maxWidth: isDesktop ? "1440px" : "100%",
+            margin: "0 auto",
+            padding: isSmartwatch
+              ? "10px 0"
+              : isMobileAny
+              ? "14px 0"
+              : "20px 0",
+            display: "flex",
+            flexDirection: copyrightDirection,
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: isSmartwatch ? "6px" : isMobileAny ? "8px" : "16px",
+            textAlign: isMobileAny || isPhablet ? "center" : "left",
+          }}
+        >
+          <Box
+            component="p"
+            className="text-white/30"
+            sx={{ fontSize: copyrightFontSize, margin: 0 }}
+          >
             © {new Date().getFullYear()} Wattex Energy. All rights reserved.
-          </p>
-          <p className="text-white/30 text-sm">
+          </Box>
+          <Box
+            component="p"
+            className="text-white/30"
+            sx={{ fontSize: copyrightFontSize, margin: 0 }}
+          >
             A Division of Zettabyte IT Solutions Private Limited
-          </p>
-        </div>
-      </div>
-    </footer>
+          </Box>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 
