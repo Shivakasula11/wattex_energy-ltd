@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import SEOHead from "../components/seo/SEOHead";
 import OnGridFaqSection from "../components/sections/OnGridFaqSection";
-import Ongrid from "../assets/ongrid1.jpg"
+import Ongrid from "../assets/ongrid1.jpg";
 import commercial4 from "../assets/commercial4.jpg";
 import ongrid2 from "../assets/ongrid2.png";
 import home2 from "../assets/home2.jpg";
@@ -82,7 +82,7 @@ const OnGridSolar = () => {
       />
 
       {/* ── 1. HERO ── */}
-      <section className="relative min-h-[100svh] flex items-center overflow-hidden py-20 sm:py-24 md:py-0 md:h-[100vh]">
+      <section className="relative min-h-[100svh] flex items-start pt-48 xs:pt-52 sm:items-center sm:pt-0 overflow-hidden md:h-[100vh]">
         <div className="absolute inset-0 z-0">
           <img
             loading="lazy"
@@ -96,15 +96,16 @@ const OnGridSolar = () => {
           <div className="max-w-5xl space-y-4 xs:space-y-5 sm:space-y-7 md:space-y-8 lg:space-y-10">
             <div className="flex items-center gap-2 xs:gap-3 sm:gap-4">
               <div className="w-6 xs:w-8 sm:w-10 md:w-12 h-px bg-[#1198DC] flex-shrink-0"></div>
-              <span className="text-[#1198DC] font-black uppercase tracking-[0.2em] xs:tracking-[0.3em] sm:tracking-[0.4em] text-[8px] xs:text-[9px] sm:text-[10px] whitespace-nowrap">
+              <span className="text-[#1198DC] font-black uppercase tracking-[0.2em] xs:tracking-[0.3em] sm:tracking-[0.4em] text-xs xs:text-sm sm:text-[10px] whitespace-nowrap">
                 Grid-Tied Solar
               </span>
             </div>
             <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5rem] font-black font-heading leading-[0.9] sm:leading-[0.85] tracking-tighter uppercase text-white break-words">
               Maximum <br />
-              <span className="text-[#1198DC]">Savings</span>.
+              <span className="text-[#1198DC]">Savings</span>
             </h1>
-            <p className="text-white/60 text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl max-w-2xl font-medium leading-relaxed">
+            <p className="text-white/80 text-base xs:text-lg sm:text-base md:text-lg lg:text-xl xl:text-2xl max-w-2xl font-medium leading-relaxed">
+              {" "}
               India's most popular solar solution. Generate clean energy, use
               what you need, sell the rest to the grid.
             </p>
@@ -115,12 +116,14 @@ const OnGridSolar = () => {
                 { val: "25 Yrs", label: "System Life" },
               ].map((stat, i) => (
                 <React.Fragment key={i}>
-                  {i > 0 && <div className="w-px h-8 xs:h-10 sm:h-12 md:h-16 bg-white/10"></div>}
+                  {i > 0 && (
+                    <div className="w-px h-8 xs:h-10 sm:h-12 md:h-16 bg-white/10"></div>
+                  )}
                   <div className="space-y-1 xs:space-y-1.5 sm:space-y-2">
-                    <div className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-black text-white">
+                    <div className="text-2xl xs:text-3xl sm:text-3xl md:text-4xl font-black text-white">
                       {stat.val}
                     </div>
-                    <div className="text-[8px] xs:text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-white/30">
+                    <div className="text-[10px] xs:text-xs sm:text-[10px] font-black uppercase tracking-widest text-white/70">
                       {stat.label}
                     </div>
                   </div>
@@ -130,12 +133,13 @@ const OnGridSolar = () => {
             <div className="flex flex-wrap gap-2 xs:gap-3 sm:gap-4 pt-2 xs:pt-3 sm:pt-4">
               <button
                 onClick={() => {
-                 navigate("/consultation");
+                  navigate("/consultation");
                   window.scrollTo(0, 0);
                 }}
                 className="bg-[#1198DC] hover:bg-[#0e85c4] text-white px-4 xs:px-5 sm:px-7 md:px-10 py-2.5 xs:py-3 sm:py-3.5 md:py-4 rounded-xl sm:rounded-2xl font-black uppercase tracking-[0.15em] xs:tracking-[0.2em] text-[9px] xs:text-[10px] sm:text-xs transition-all shadow-xl shadow-[#1198DC]/20 hover:-translate-y-1 whitespace-nowrap inline-flex items-center"
               >
-                <i className="fas fa-bolt mr-1.5 xs:mr-2 sm:mr-3"></i>Get Free Quote
+                <i className="fas fa-bolt mr-1.5 xs:mr-2 sm:mr-3"></i>Get Free
+                Quote
               </button>
               <button
                 onClick={() => {
@@ -144,7 +148,8 @@ const OnGridSolar = () => {
                 }}
                 className="bg-white/10 hover:bg-white/20 text-white px-4 xs:px-5 sm:px-7 md:px-10 py-2.5 xs:py-3 sm:py-3.5 md:py-4 rounded-xl sm:rounded-2xl font-black uppercase tracking-[0.15em] xs:tracking-[0.2em] text-[9px] xs:text-[10px] sm:text-xs transition-all border border-white/20 hover:-translate-y-1 backdrop-blur-sm whitespace-nowrap inline-flex items-center"
               >
-                <i className="fas fa-calculator mr-1.5 xs:mr-2 sm:mr-3"></i>Calculate Savings
+                <i className="fas fa-calculator mr-1.5 xs:mr-2 sm:mr-3"></i>
+                Calculate Savings
               </button>
             </div>
           </div>
@@ -170,10 +175,10 @@ const OnGridSolar = () => {
             </p>
           </div>
 
-        <div className="relative max-w-4xl mx-auto">
-  {/* Connecting line */}
-  <div className="absolute top-20 left-[12%] right-[12%] h-[2px] bg-[#1198DC]/10 hidden lg:block"></div>
-  <div className="absolute top-20 left-[12%] right-[60%] h-[2px] bg-[#1198DC] hidden lg:block"></div>
+          <div className="relative max-w-4xl mx-auto">
+            {/* Connecting line */}
+            <div className="absolute top-20 left-[12%] right-[12%] h-[2px] bg-[#1198DC]/10 hidden lg:block"></div>
+            <div className="absolute top-20 left-[12%] right-[60%] h-[2px] bg-[#1198DC] hidden lg:block"></div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 xs:gap-8 sm:gap-10">
               {[
@@ -239,28 +244,36 @@ const OnGridSolar = () => {
                 <div className="w-8 h-8 xs:w-9 xs:h-9 sm:w-10 sm:h-10 bg-amber-100 rounded-lg xs:rounded-xl flex items-center justify-center flex-shrink-0">
                   <i className="fas fa-sun text-amber-500 text-xs xs:text-sm"></i>
                 </div>
-                <span className="font-bold text-solar-deep text-xs xs:text-sm sm:text-base">Solar Panels</span>
+                <span className="font-bold text-solar-deep text-xs xs:text-sm sm:text-base">
+                  Solar Panels
+                </span>
               </div>
               <i className="fas fa-arrow-right text-[#1198DC] text-xs xs:text-sm"></i>
               <div className="flex items-center gap-2 xs:gap-3">
                 <div className="w-8 h-8 xs:w-9 xs:h-9 sm:w-10 sm:h-10 bg-[#1198DC]/10 rounded-lg xs:rounded-xl flex items-center justify-center flex-shrink-0">
                   <i className="fas fa-rotate text-[#1198DC] text-xs xs:text-sm"></i>
                 </div>
-                <span className="font-bold text-solar-deep text-xs xs:text-sm sm:text-base">Inverter</span>
+                <span className="font-bold text-solar-deep text-xs xs:text-sm sm:text-base">
+                  Inverter
+                </span>
               </div>
               <i className="fas fa-arrow-right text-[#1198DC] text-xs xs:text-sm"></i>
               <div className="flex items-center gap-2 xs:gap-3">
                 <div className="w-8 h-8 xs:w-9 xs:h-9 sm:w-10 sm:h-10 bg-emerald-100 rounded-lg xs:rounded-xl flex items-center justify-center flex-shrink-0">
                   <i className="fas fa-house text-emerald-500 text-xs xs:text-sm"></i>
                 </div>
-                <span className="font-bold text-solar-deep text-xs xs:text-sm sm:text-base">Your Home</span>
+                <span className="font-bold text-solar-deep text-xs xs:text-sm sm:text-base">
+                  Your Home
+                </span>
               </div>
               <i className="fas fa-arrows-left-right text-[#1198DC] text-xs xs:text-sm"></i>
               <div className="flex items-center gap-2 xs:gap-3">
                 <div className="w-8 h-8 xs:w-9 xs:h-9 sm:w-10 sm:h-10 bg-violet-100 rounded-lg xs:rounded-xl flex items-center justify-center flex-shrink-0">
                   <i className="fas fa-gauge-high text-violet-500 text-xs xs:text-sm"></i>
                 </div>
-                <span className="font-bold text-solar-deep text-xs xs:text-sm sm:text-base">Net Meter</span>
+                <span className="font-bold text-solar-deep text-xs xs:text-sm sm:text-base">
+                  Net Meter
+                </span>
               </div>
             </div>
           </div>
@@ -312,7 +325,10 @@ const OnGridSolar = () => {
                     color: "text-violet-500 bg-violet-50",
                   },
                 ].map((item, i) => (
-                  <div key={i} className="flex gap-3 xs:gap-4 sm:gap-5 md:gap-6 group">
+                  <div
+                    key={i}
+                    className="flex gap-3 xs:gap-4 sm:gap-5 md:gap-6 group"
+                  >
                     <div
                       className={`w-10 h-10 xs:w-11 xs:h-11 sm:w-12 sm:h-12 md:w-14 md:h-14 ${item.color} shadow-lg rounded-xl xs:rounded-2xl flex items-center justify-center text-base xs:text-lg sm:text-xl shrink-0 group-hover:scale-110 transition-transform duration-500`}
                     >
@@ -334,20 +350,24 @@ const OnGridSolar = () => {
               <div className="rounded-2xl xs:rounded-3xl sm:rounded-[2.5rem] md:rounded-[3rem] lg:rounded-[4rem] overflow-hidden shadow-2xl aspect-[4/5]">
                 <img
                   loading="lazy"
-                  src={commercial4 }
+                  src={commercial4}
                   className="w-full h-full object-cover"
                   alt="Residential rooftop solar installation with grid connection"
                 />
               </div>
               {/* Floating badges */}
               <div className="absolute -bottom-3 xs:-bottom-4 sm:-bottom-5 md:-bottom-6 -left-2 xs:-left-3 sm:-left-4 md:-left-6 bg-[#1198DC] text-white px-4 xs:px-5 sm:px-6 md:px-8 py-3 xs:py-4 sm:py-5 rounded-2xl sm:rounded-3xl shadow-2xl shadow-[#1198DC]/30">
-                <div className="text-xl xs:text-2xl sm:text-3xl font-black">₹0</div>
+                <div className="text-xl xs:text-2xl sm:text-3xl font-black">
+                  ₹0
+                </div>
                 <div className="text-[7px] xs:text-[8px] sm:text-[9px] font-black uppercase tracking-widest opacity-80">
                   Battery Cost
                 </div>
               </div>
               <div className="absolute -top-3 xs:-top-4 sm:-top-5 md:-top-6 -right-2 xs:-right-3 sm:-right-4 md:-right-6 bg-white text-solar-deep px-4 xs:px-5 sm:px-6 md:px-8 py-3 xs:py-4 sm:py-5 rounded-2xl sm:rounded-3xl shadow-2xl border border-slate-100">
-                <div className="text-xl xs:text-2xl sm:text-3xl font-black text-emerald-500">7x</div>
+                <div className="text-xl xs:text-2xl sm:text-3xl font-black text-emerald-500">
+                  7x
+                </div>
                 <div className="text-[7px] xs:text-[8px] sm:text-[9px] font-black uppercase tracking-widest text-slate-400">
                   ROI Return
                 </div>
@@ -415,7 +435,9 @@ const OnGridSolar = () => {
                 <div className="text-[8px] xs:text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-white/40 mb-1 xs:mb-2">
                   {panel.time}
                 </div>
-                <h3 className="text-lg xs:text-xl sm:text-2xl font-black mb-1 xs:mb-2">{panel.period}</h3>
+                <h3 className="text-lg xs:text-xl sm:text-2xl font-black mb-1 xs:mb-2">
+                  {panel.period}
+                </h3>
                 <p className="text-white/50 text-xs xs:text-sm font-medium mb-4 xs:mb-5 sm:mb-6 leading-relaxed">
                   {panel.desc}
                 </p>
@@ -433,12 +455,16 @@ const OnGridSolar = () => {
           <div className="max-w-3xl mx-auto mt-8 xs:mt-10 sm:mt-12 md:mt-16 bg-white/10 backdrop-blur-sm border border-white/10 rounded-xl sm:rounded-2xl p-4 xs:p-5 sm:p-6 md:p-8">
             <div className="flex flex-wrap items-center justify-center gap-3 xs:gap-4 md:gap-6 text-center">
               <div>
-                <div className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-black">800</div>
+                <div className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-black">
+                  800
+                </div>
                 <div className="text-[7px] xs:text-[8px] sm:text-[9px] font-black uppercase tracking-widest text-white/40">
                   Units Imported
                 </div>
               </div>
-              <div className="text-xl xs:text-2xl sm:text-3xl font-black text-white/30">−</div>
+              <div className="text-xl xs:text-2xl sm:text-3xl font-black text-white/30">
+                −
+              </div>
               <div>
                 <div className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-black text-[#1198DC]">
                   650
@@ -447,7 +473,9 @@ const OnGridSolar = () => {
                   Units Exported
                 </div>
               </div>
-              <div className="text-xl xs:text-2xl sm:text-3xl font-black text-white/30">=</div>
+              <div className="text-xl xs:text-2xl sm:text-3xl font-black text-white/30">
+                =
+              </div>
               <div>
                 <div className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-black text-emerald-300">
                   150
@@ -541,7 +569,8 @@ const OnGridSolar = () => {
                 }}
                 className="bg-[#1198DC] hover:bg-[#0e85c4] text-white px-5 xs:px-6 sm:px-8 md:px-10 py-2.5 xs:py-3 sm:py-3.5 md:py-4 rounded-xl sm:rounded-2xl font-black uppercase tracking-wider sm:tracking-widest text-[9px] xs:text-[10px] sm:text-xs transition-all shadow-lg shadow-[#1198DC]/20 hover:-translate-y-1 inline-flex items-center whitespace-nowrap"
               >
-                <i className="fas fa-calculator mr-2 xs:mr-2.5 sm:mr-3"></i>Use Full Calculator
+                <i className="fas fa-calculator mr-2 xs:mr-2.5 sm:mr-3"></i>Use
+                Full Calculator
               </button>
             </div>
 
@@ -571,7 +600,9 @@ const OnGridSolar = () => {
 
               {/* Top-right badge */}
               <div className="absolute top-3 xs:top-4 sm:top-5 md:top-6 right-3 xs:right-4 sm:right-5 md:right-6 bg-[#1198DC] rounded-xl xs:rounded-2xl px-2.5 xs:px-3 sm:px-4 py-2 xs:py-2.5 sm:py-3 text-center shadow-xl shadow-[#1198DC]/30">
-                <div className="text-white font-black text-base xs:text-lg sm:text-xl">7x</div>
+                <div className="text-white font-black text-base xs:text-lg sm:text-xl">
+                  7x
+                </div>
                 <div className="text-[7px] xs:text-[8px] font-black uppercase tracking-widest text-white/70">
                   ROI
                 </div>
@@ -614,7 +645,10 @@ const OnGridSolar = () => {
 
       {/* ── 6. ON-GRID PACKAGES ── */}
       <section className="py-12 xs:py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32 bg-slate-50">
-        <div className="mx-auto px-3 xs:px-4 sm:px-6 lg:px-8" style={{ maxWidth: "1400px" }}>
+        <div
+          className="mx-auto px-3 xs:px-4 sm:px-6 lg:px-8"
+          style={{ maxWidth: "1400px" }}
+        >
           <div className="text-center mb-10 xs:mb-12 sm:mb-16 md:mb-20 space-y-2 xs:space-y-3 sm:space-y-4">
             <span className="text-[#1198DC] font-black uppercase tracking-widest text-[9px] xs:text-[10px] sm:text-xs">
               Off-Grid Solar Systems
@@ -696,9 +730,15 @@ const OnGridSolar = () => {
                     Most Popular
                   </div>
                 )}
-                <div className={`${plan.color} text-white p-4 xs:p-5 sm:p-6 md:p-8`}>
-                  <h3 className="text-xl xs:text-2xl sm:text-3xl font-black">{plan.name}</h3>
-                  <p className="text-white/70 font-medium text-xs xs:text-sm sm:text-base mt-0.5 xs:mt-1">{plan.sub}</p>
+                <div
+                  className={`${plan.color} text-white p-4 xs:p-5 sm:p-6 md:p-8`}
+                >
+                  <h3 className="text-xl xs:text-2xl sm:text-3xl font-black">
+                    {plan.name}
+                  </h3>
+                  <p className="text-white/70 font-medium text-xs xs:text-sm sm:text-base mt-0.5 xs:mt-1">
+                    {plan.sub}
+                  </p>
                 </div>
                 <div className="p-4 xs:p-5 sm:p-6 md:p-8 space-y-4 xs:space-y-5 sm:space-y-6">
                   <div className="space-y-3 xs:space-y-4">
@@ -769,8 +809,8 @@ const OnGridSolar = () => {
       <section
         className="relative min-h-[400px] xs:min-h-[450px] sm:min-h-[500px] h-[60vh] md:h-[70vh] bg-fixed bg-center bg-cover overflow-hidden"
         style={{
-           backgroundImage: `url(${home2})`,
-                  }}
+          backgroundImage: `url(${home2})`,
+        }}
       >
         <div className="absolute inset-0 bg-solar-deep/70 backdrop-blur-[2px]"></div>
         <div className="relative z-10 h-full flex items-center justify-center text-center px-3 xs:px-4 sm:px-6 py-12 xs:py-16 sm:py-20">
@@ -861,7 +901,9 @@ const OnGridSolar = () => {
                     key={i}
                     className={`${item.color} border rounded-xl xs:rounded-2xl sm:rounded-[1.5rem] md:rounded-[2rem] p-3 xs:p-4 sm:p-5 md:p-6 lg:p-8 text-center group hover:shadow-xl transition-all duration-500`}
                   >
-                    <div className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-black mb-0.5 xs:mb-1 break-words">{item.value}</div>
+                    <div className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-black mb-0.5 xs:mb-1 break-words">
+                      {item.value}
+                    </div>
                     <div className="text-solar-deep font-bold text-[10px] xs:text-xs sm:text-sm">
                       {item.label}
                     </div>
@@ -924,7 +966,9 @@ const OnGridSolar = () => {
                 </div>
               </div>
               <div className="absolute -top-3 xs:-top-4 -right-2 xs:-right-3 sm:-right-4 bg-emerald-500 text-white px-3 xs:px-4 sm:px-5 py-2 xs:py-2.5 sm:py-3 rounded-xl xs:rounded-2xl shadow-xl shadow-emerald-500/30">
-                <div className="text-base xs:text-lg sm:text-xl font-black">Save</div>
+                <div className="text-base xs:text-lg sm:text-xl font-black">
+                  Save
+                </div>
                 <div className="text-[7px] xs:text-[8px] font-black uppercase tracking-widest opacity-80">
                   Up to ₹78K
                 </div>

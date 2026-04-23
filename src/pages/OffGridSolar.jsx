@@ -80,28 +80,29 @@ const OffGridSolar = () => {
 
       {/* 1. HERO — DARK */}
       <section className="relative h-[100vh] flex items-center overflow-hidden bg-[#0F172A] text-white">
-        <div className="absolute inset-0 z-0 opacity-30">
+        <div className="absolute inset-0 z-0 opacity-60">
           <img
             loading="lazy"
             src="https://images.unsplash.com/photo-1594818379496-da1e345b0ded?auto=format&fit=crop&q=80&w=1920"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-[30%_center] sm:object-center"
             alt="Off-grid solar system with battery storage for energy independence"
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-solar-deep via-solar-deep/80 sm:via-solar-deep/70 to-solar-deep/50 sm:to-transparent"></div>
         </div>
         {/* <div className="absolute inset-0 z-[1] bg-gradient-to-r from-[#0F172A] via-[#0F172A]/80 to-transparent"></div> */}
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-5xl space-y-12">
             <div className="flex items-center gap-4">
               <div className="w-12 h-px bg-[#E11D48]"></div>
-              <span className="text-[#E11D48] font-black uppercase tracking-[0.4em] text-[10px]">
+              <span className="text-white font-black uppercase tracking-[0.2em] text-[10px]">
                 Autonomous Energy Systems
               </span>
             </div>
-            <h1 className="text-2xl md:text-[6rem] font-black font-heading leading-[0.85] tracking-tighter uppercase">
+            <h1 className="text-5xl sm:text-6xl md:text-[6rem] font-black font-heading leading-[0.85] tracking-tighter uppercase text-solar-primary">
               Pure <br />
-              <span className="text-[#E11D48]">Autonomy</span>.
+              <span className="text-[#E11D48]">Autonomy</span>
             </h1>
-            <p className="text-white/50 text-xl md:text-2xl max-w-2xl font-light leading-tight">
+            <p className="text-/100 text-xl md:text-2xl max-w-2xl font-black leading-tight">
               Engineered for the most demanding remote environments. Complete
               energy independence without compromise.
             </p>
@@ -114,10 +115,10 @@ const OffGridSolar = () => {
                 <React.Fragment key={i}>
                   {i > 0 && <div className="w-px h-16 bg-white/10"></div>}
                   <div className="space-y-2">
-                    <div className="text-4xl font-black text-white">
+                    <div className="text-3xl sm:text-4xl font-black text-white">
                       {stat.val}
                     </div>
-                    <div className="text-[10px] font-black uppercase tracking-widest text-white/30">
+                    <div className="text-[11px] sm:text-[10px] font-black uppercase tracking-widest text-white/70">
                       {stat.label}
                     </div>
                   </div>

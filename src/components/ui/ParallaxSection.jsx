@@ -7,7 +7,7 @@ const ParallaxSection = ({ image, title, subtitle }) => (
   >
     <div className="absolute inset-0 bg-solar-deep/60 backdrop-blur-[2px]"></div>
     <div className="relative z-10 text-center px-6 max-w-4xl animate-fade-in">
-      <h2 className="text-4xl md:text-7xl font-black text-white mb-6 uppercase tracking-tighter leading-none">
+      <h2 className="text-4xl md:text-7xl font-white text-white mb-6 uppercase tracking-tighter leading-none">
         {title}
       </h2>
       <div className="w-24 h-1 bg-solar-primary mx-auto mb-8"></div>

@@ -1,33 +1,33 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import coursel2 from '../../assets/coursel2.png';
-import Home1 from '../../assets/Home1.jpg';
-import Home2 from '../../assets/home2.jpg';
-import Home3 from '../../assets/Home3.jpeg';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import coursel2 from "../../assets/coursel2.png";
+import Home1 from "../../assets/Home1.jpg";
+import Home2 from "../../assets/home2.jpg";
+import Home3 from "../../assets/Home3.jpeg";
 
 const slides = [
   {
     image: Home2,
-    tag: 'Residential Solar Solutions',
+    tag: "Residential Solar Solutions",
   },
   {
     image: coursel2,
-    tag: 'Commercial Solar Solutions',
+    tag: "Commercial Solar Solutions",
   },
   {
     image: Home1,
-    tag: 'Housing Society Solar',
+    tag: "Housing Society Solar",
   },
   {
     image: Home3,
-    tag: 'Utility Scale Solar',
+    tag: "Utility Scale Solar",
   },
 ];
 
 const stats = [
-  { value: '100+', label: 'Homes Powered' },
-  { value: '5 years', label: 'Solar Care plan' },
-  { value: '90%', label: 'Bill Savings' },
+  { value: "100+", label: "Homes Powered" },
+  { value: "5 years", label: "Solar Care plan" },
+  { value: "90%", label: "Bill Savings" },
 ];
 
 const HeroCarousel = () => {
@@ -42,9 +42,9 @@ const HeroCarousel = () => {
   }, []);
 
   const scrollToForm = () => {
-    const formSection = document.getElementById('consultation-form');
+    const formSection = document.getElementById("consultation-form");
     if (formSection) {
-      formSection.scrollIntoView({ behavior: 'smooth' });
+      formSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -55,7 +55,7 @@ const HeroCarousel = () => {
         <div
           key={index}
           className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            index === currentSlide ? 'opacity-100' : 'opacity-0'
+            index === currentSlide ? "opacity-100" : "opacity-0"
           }`}
         >
           <img
@@ -67,11 +67,14 @@ const HeroCarousel = () => {
       ))}
 
       {/* Multi-layer overlay for professional depth */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0a0f1a]/95 via-[#0a0f1a]/85 sm:via-[#0a0f1a]/70 to-[#0a0f1a]/60 sm:to-transparent z-10"></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1a]/80 via-transparent to-[#0a0f1a]/30 z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0a0f1a] via-[#0a0f1a]/30 to-transparent z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1a]/10 via-transparent to-transparent z-10"></div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 relative z-20 h-full flex flex-col justify-center">
+
+
+
+      <div className="container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 relative z-20 h-full flex flex-col justify-center pb-24 xs:pb-32 sm:pb-0">
         <div className="max-w-2xl">
           {/* Animated Tag - Changes per slide */}
           <div className="flex items-center gap-2 xs:gap-3 mb-3 xs:mb-4 sm:mb-5 md:mb-6 relative h-4 xs:h-5">
@@ -79,10 +82,10 @@ const HeroCarousel = () => {
             {slides.map((slide, index) => (
               <span
                 key={index}
-                className={`absolute left-6 xs:left-8 sm:left-11 text-solar-primary font-semibold uppercase tracking-[0.15em] xs:tracking-[0.2em] sm:tracking-[0.25em] text-[8px] xs:text-[9px] sm:text-[10px] md:text-[11px] transition-all duration-500 whitespace-nowrap ${
+                className={`absolute left-6 xs:left-8 sm:left-11 text-solar-primary font-semibold uppercase tracking-[0.15em] xs:tracking-[0.2em] sm:tracking-[0.25em] text-[10px] xs:text-xs sm:text-[10px] md:text-[11px] transition-all duration-500 whitespace-nowrap ${
                   index === currentSlide
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 -translate-y-3'
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 -translate-y-3"
                 }`}
               >
                 {slide.tag}
@@ -91,17 +94,17 @@ const HeroCarousel = () => {
           </div>
 
           {/* Headline */}
-          <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-[1.1] tracking-tight mb-3 xs:mb-4 sm:mb-5 md:mb-6 break-words">
-            Power your home
+          <h1 className="text-4xl xs:text-5xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-[1.1] tracking-tight mb-3 xs:mb-4 sm:mb-5 md:mb-6 break-words">
+            Power your Home
             <br />
-            with{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-solar-sky to-cyan-300">
-              clean energy
+            with{" "}
+            <span className="text-solar-primary bg-clip-text bg-gradient-to-r from-solar-sky to-cyan-300">
+              Clean Energy
             </span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-white/50 text-[11px] xs:text-xs sm:text-sm md:text-base lg:text-lg max-w-md leading-relaxed mb-4 xs:mb-5 sm:mb-6 md:mb-8">
+          <p className="text-white/90 text-sm xs:text-base sm:text-sm md:text-base lg:text-lg max-w-md leading-relaxed mb-4 xs:mb-5 sm:mb-6 md:mb-8 font-medium">
             Save up to 90% on electricity bills. Expert installation across
             Telangana & AndhraPradesh with 25-year warranty.
           </p>
@@ -110,17 +113,17 @@ const HeroCarousel = () => {
           <div className="flex flex-row flex-wrap items-start gap-2 xs:gap-3 sm:gap-4 mb-8 xs:mb-10 sm:mb-12 md:mb-14 lg:mb-16">
             <button
               onClick={scrollToForm}
-              className="group bg-solar-primary hover:bg-rose-600 text-white px-2.5 xs:px-3 sm:px-3.5 md:px-4 py-1.5 xs:py-2 sm:py-2.5 rounded-md sm:rounded-lg font-bold uppercase tracking-wider text-[8px] xs:text-[9px] sm:text-[10px] transition-all duration-300 shadow-lg shadow-solar-primary/25 hover:shadow-xl hover:shadow-solar-primary/30 hover:-translate-y-0.5 w-auto inline-flex items-center justify-center whitespace-nowrap"
+              className="group bg-solar-primary hover:bg-rose-600 text-white px-4 xs:px-5 sm:px-3.5 md:px-4 py-2.5 xs:py-3 sm:py-2.5 rounded-md sm:rounded-lg font-bold uppercase tracking-wider text-xs xs:text-sm sm:text-[10px] transition-all duration-300 shadow-lg shadow-solar-primary/25 hover:shadow-xl hover:shadow-solar-primary/30 hover:-translate-y-0.5 w-auto inline-flex items-center justify-center whitespace-nowrap"
             >
               Book Free Consultation
-              <i className="fas fa-arrow-right ml-1.5 text-[7px] xs:text-[8px] transition-transform duration-300 group-hover:translate-x-1"></i>
+              <i className="fas fa-arrow-right ml-1.5 text-[10px] xs:text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
             </button>
             <button
-              onClick={() => navigate('/contact')}
-              className="group border border-white/20 text-white px-4 xs:px-5 sm:px-6 md:px-7 py-1.5 xs:py-2 sm:py-2.5 rounded-md sm:rounded-lg font-bold uppercase tracking-wider text-[8px] xs:text-[9px] sm:text-[10px] hover:border-white/40 hover:bg-white/5 transition-all duration-300 w-auto inline-flex items-center justify-center whitespace-nowrap"
+              onClick={() => navigate("/contact")}
+              className="group border border-white/20 text-white px-5 xs:px-6 sm:px-6 md:px-7 py-2.5 xs:py-3 sm:py-2.5 rounded-md sm:rounded-lg font-bold uppercase tracking-wider text-xs xs:text-sm sm:text-[10px] hover:border-white/40 hover:bg-white/5 transition-all duration-300 w-auto inline-flex items-center justify-center whitespace-nowrap"
             >
               Contact Us
-              <i className="fas fa-phone ml-1.5 text-[7px] xs:text-[8px] opacity-50 group-hover:opacity-100 transition-opacity"></i>
+              <i className="fas fa-phone ml-1.5 text-[10px] xs:text-xs opacity-50 group-hover:opacity-100 transition-opacity"></i>
             </button>
           </div>
 
@@ -129,10 +132,10 @@ const HeroCarousel = () => {
             {stats.map((stat, index) => (
               <React.Fragment key={index}>
                 <div>
-                  <p className="text-white text-sm xs:text-base sm:text-xl md:text-2xl lg:text-3xl font-black tracking-tight">
+                  <p className="text-white text-xl xs:text-2xl sm:text-xl md:text-2xl lg:text-3xl font-black tracking-tight">
                     {stat.value}
                   </p>
-                  <p className="text-white/30 text-[8px] xs:text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.12em] xs:tracking-[0.15em] sm:tracking-[0.2em] mt-0.5 xs:mt-1 whitespace-nowrap">
+                  <p className="text-solar-primary/80 text-[10px] xs:text-xs sm:text-[10px] font-bold uppercase tracking-[0.12em] xs:tracking-[0.15em] sm:tracking-[0.2em] mt-0.5 xs:mt-1 whitespace-nowrap">
                     {stat.label}
                   </p>
                 </div>
@@ -153,15 +156,13 @@ const HeroCarousel = () => {
             onClick={() => setCurrentSlide(index)}
             className={`h-1 transition-all duration-500 rounded-full ${
               index === currentSlide
-                ? 'w-6 xs:w-8 sm:w-10 bg-solar-primary'
-                : 'w-3 xs:w-4 sm:w-5 bg-white/20 hover:bg-white/30'
+                ? "w-6 xs:w-8 sm:w-10 bg-solar-primary"
+                : "w-3 xs:w-4 sm:w-5 bg-white/20 hover:bg-white/30"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
-
-     
     </section>
   );
 };

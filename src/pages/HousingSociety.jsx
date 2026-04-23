@@ -1,13 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import SEOHead from '../components/seo/SEOHead';
+import SEOHead from "../components/seo/SEOHead";
 import HousingSocietyFaqSection from "../components/sections/HousingSocietyFaqSection";
-import housingSociety from '../assets/housing.jpeg';
-import housingSociety3 from '../assets/housing3.jpg';
-import Housingreview from '../assets/Housingreview.png';
-import resortsImg from '../assets/Resorts.png';
-import Housingreview1 from '../assets/Housingreview1.png';
-import Housingreview2 from '../assets/Housingreview2.png';
+import housingSociety from "../assets/housing.jpeg";
+import housingSociety3 from "../assets/housing3.jpg";
+import Housingreview from "../assets/Housingreview.png";
+import resortsImg from "../assets/Resorts.png";
+import Housingreview1 from "../assets/Housingreview1.png";
+import Housingreview2 from "../assets/Housingreview2.png";
 const HousingSociety = () => {
   const navigate = useNavigate();
 
@@ -20,26 +20,59 @@ const HousingSociety = () => {
         keywords="housing society solar Hyderabad, apartment solar panels, gated community solar, RWA solar installation, reduce maintenance costs solar, common area solar"
         image={housingSociety}
         schema={[
-        {
-          '@context': 'https://schema.org',
-          '@type': 'Service',
-          name: 'Housing Society Solar Installation',
-          provider: { '@type': 'Organization', name: 'Wattex Energy', url: 'https://wattexenergy.com' },
-          description: 'Shared solar infrastructure for housing societies — eliminate common area electricity costs and reduce monthly maintenance by up to 40%.',
-          areaServed: { '@type': 'City', name: 'Hyderabad' },
-          serviceType: 'Housing Society Solar Installation',
-        },
-        {
-          '@context': 'https://schema.org',
-          '@type': 'FAQPage',
-          mainEntity: [
-            { '@type': 'Question', name: 'Do we need 100% resident agreement for society solar?', acceptedAnswer: { '@type': 'Answer', text: 'No. A simple majority (51%) or two-thirds majority in RWA general body meeting is sufficient. Wattex helps draft the resolution and supporting documents.' } },
-            { '@type': 'Question', name: 'Who owns the solar system — society or vendor?', acceptedAnswer: { '@type': 'Answer', text: 'The housing society owns the system entirely. Wattex installs, commissions, and hands over ownership to the RWA with full rights to generated electricity and subsidies.' } },
-            { '@type': 'Question', name: 'How is savings distributed among flats?', acceptedAnswer: { '@type': 'Answer', text: 'Solar powers common areas first (lifts, pumps, lights, CCTV). Savings reflect directly in reduced monthly maintenance charges shared equally by all flats.' } },
-            { '@type': 'Question', name: 'What if we have limited rooftop space?', acceptedAnswer: { '@type': 'Answer', text: 'Wattex engineers optimize every square foot using high-efficiency panels, solar carports over parking, and vertical mounting. Typically 60-80% of usable roof area is found.' } },
-          ],
-        },
-      ]}
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Housing Society Solar Installation",
+            provider: {
+              "@type": "Organization",
+              name: "Wattex Energy",
+              url: "https://wattexenergy.com",
+            },
+            description:
+              "Shared solar infrastructure for housing societies — eliminate common area electricity costs and reduce monthly maintenance by up to 40%.",
+            areaServed: { "@type": "City", name: "Hyderabad" },
+            serviceType: "Housing Society Solar Installation",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "Do we need 100% resident agreement for society solar?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "No. A simple majority (51%) or two-thirds majority in RWA general body meeting is sufficient. Wattex helps draft the resolution and supporting documents.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Who owns the solar system — society or vendor?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "The housing society owns the system entirely. Wattex installs, commissions, and hands over ownership to the RWA with full rights to generated electricity and subsidies.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How is savings distributed among flats?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Solar powers common areas first (lifts, pumps, lights, CCTV). Savings reflect directly in reduced monthly maintenance charges shared equally by all flats.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What if we have limited rooftop space?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Wattex engineers optimize every square foot using high-efficiency panels, solar carports over parking, and vertical mounting. Typically 60-80% of usable roof area is found.",
+                },
+              },
+            ],
+          },
+        ]}
       />
       {/* Hero (Existing) */}
       <section className="relative h-[100vh] flex items-center overflow-hidden">
@@ -51,28 +84,23 @@ const HousingSociety = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-solar-deep via-solar-deep/70 to-transparent"></div>
         </div>
-      <div className="container mx-auto px-6 relative z-10 pt-20 sm:pt-0">
+        <div className="container mx-auto px-6 relative z-10 pb-16 sm:pb-0">
           <div className="max-w-4xl space-y-8">
-            
-            <h1 className="text-3xl sm:text-5xl md:text-7xl font-black text-white font-heading leading-tight tracking-tighter uppercase">
-  Shared Solar
-  <br />
-  <span className="block mt-2 sm:mt-4 text-solar-primary">Collective Savings .</span>
-</h1>
-           <p className="text-white/70 text-base sm:text-xl md:text-2xl max-w-2xl font-medium leading-relaxed mt-2 sm:mt-4">
+            <h1 className="text-5xl sm:text-5xl md:text-7xl font-black text-white font-heading leading-tight tracking-tighter uppercase">
+              Shared Solar
+              <br />
+              <span className="block mt-2 sm:mt-4 text-solar-primary">
+                Collective Savings{" "}
+              </span>
+            </h1>
+
+            <p className="text-white/70 text-lg sm:text-xl md:text-2xl max-w-2xl font-medium leading-relaxed mt-2 sm:mt-4">
               Revolutionize your residential complex's maintenance costs with
               large-scale shared solar infrastructure.
             </p>
-
-            
           </div>
-
-          
         </div>
-
-        
       </section>
-      
 
       {/* Benefits (Existing) */}
       <section className="py-32 bg-slate-50">
@@ -266,8 +294,6 @@ const HousingSociety = () => {
                     className={`${step.bgColor} border ${step.borderColor} rounded-[2rem] p-8 lg:p-10 group hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 relative overflow-hidden`}
                   >
                     {/* Background number */}
-                   
-                    
 
                     <div className="relative z-10">
                       {/* Mobile icon */}
@@ -554,8 +580,7 @@ const HousingSociety = () => {
         </div>
       </section>
 
-
- {/* ★ Government Subsidy Info */}
+      {/* ★ Government Subsidy Info */}
       <section className="py-32 bg-white">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center max-w-6xl mx-auto">
@@ -626,14 +651,11 @@ const HousingSociety = () => {
                   Your housing society is eligible for government subsidy on
                   rooftop solar installations.
                 </p>
-            
-     
               </div>
             </div>
           </div>
         </div>
       </section>
-
 
       {/* ★ Parallax Trust Section */}
       <section
@@ -650,7 +672,7 @@ const HousingSociety = () => {
               <span className="text-solar-yellow">10+ Housing Societies</span>
             </h2>
             <div className="w-24 h-1 bg-solar-primary mx-auto"></div>
-            <p className="text-white/70 text-lg md:text-2xl font-medium leading-relaxed max-w-2xl mx-auto">
+            <p className="text-white/90 text-lg md:text-2xl font-medium leading-relaxed max-w-2xl mx-auto">
               From gated communities to large townships — powering shared spaces
               across India.
             </p>
@@ -669,7 +691,7 @@ const HousingSociety = () => {
                     <div className="text-4xl md:text-5xl font-black text-white">
                       {stat.val}
                     </div>
-                    <div className="text-[10px] font-black uppercase tracking-widest text-white/40 mt-2">
+                    <div className="text-[10px] font-black uppercase tracking-widest text-white/90 mt-2">
                       {stat.label}
                     </div>
                   </div>
@@ -679,9 +701,6 @@ const HousingSociety = () => {
           </div>
         </div>
       </section>
-
-      
-    
 
       {/* ★ Society Testimonials */}
       <section className="py-32 bg-slate-50">
@@ -772,9 +791,7 @@ const HousingSociety = () => {
         </div>
       </section>
 
-    
-
-       {/* CTA (Enhanced) */}
+      {/* CTA (Enhanced) */}
       <section className="py-24 bg-solar-deep text-white text-center relative overflow-hidden">
         <div className="container mx-auto px-6 text-center space-y-10">
           <h2 className="text-4xl md:text-4xl font-black text-white tracking-tight leading-tight">
@@ -786,23 +803,21 @@ const HousingSociety = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <button
-  onClick={() => {
-    navigate("/consultation");
-    window.scrollTo(0, 0);
-  }}
-  className="bg-white hover:bg-slate-50 text-solar-sky px-12 py-5 rounded-2xl font-black uppercase tracking-widest text-xs transition-all shadow-xl hover:-translate-y-1"
->
-  <i className="fas fa-clipboard-check mr-3"></i>Book Free Consultation
-</button>
-            
+              onClick={() => {
+                navigate("/consultation");
+                window.scrollTo(0, 0);
+              }}
+              className="bg-white hover:bg-slate-50 text-solar-sky px-12 py-5 rounded-2xl font-black uppercase tracking-widest text-xs transition-all shadow-xl hover:-translate-y-1"
+            >
+              <i className="fas fa-clipboard-check mr-3"></i>Book Free
+              Consultation
+            </button>
           </div>
         </div>
       </section>
 
       {/* ★ Society FAQ */}
       <HousingSocietyFaqSection />
-
-     
     </div>
   );
 };
