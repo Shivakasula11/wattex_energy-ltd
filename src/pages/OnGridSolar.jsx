@@ -6,6 +6,7 @@ import Ongrid from "../assets/ongrid1.jpg";
 import commercial4 from "../assets/commercial4.jpg";
 import ongrid2 from "../assets/ongrid2.png";
 import home2 from "../assets/home2.jpg";
+import Ongrid1 from "../assets/ongrid1.jpg"
 const OnGridSolar = () => {
   const navigate = useNavigate();
 
@@ -86,7 +87,7 @@ const OnGridSolar = () => {
         <div className="absolute inset-0 z-0">
           <img
             loading="lazy"
-            src="https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&q=80&w=1920"
+            src={Ongrid1}
             className="w-full h-full object-cover object-[60%_center] sm:object-center"
             alt="On-grid solar panel system with net metering in Hyderabad"
           />
@@ -176,9 +177,31 @@ const OnGridSolar = () => {
           </div>
 
           <div className="relative max-w-4xl mx-auto">
-            {/* Connecting line */}
-            <div className="absolute top-20 left-[12%] right-[12%] h-[2px] bg-[#1198DC]/10 hidden lg:block"></div>
-            <div className="absolute top-20 left-[12%] right-[60%] h-[2px] bg-[#1198DC] hidden lg:block"></div>
+            {/* Enhanced Professional Connecting Line */}
+            <div className="absolute top-20 left-[12%] right-[12%] hidden lg:block">
+              {/* Background glow layer */}
+              <div className="absolute inset-0 h-[4px] bg-gradient-to-r from-[#1198DC]/0 via-[#1198DC]/20 to-[#1198DC]/0 blur-sm"></div>
+              
+              {/* Main gradient line */}
+              <div className="absolute inset-0 h-[3px] bg-gradient-to-r from-[#1198DC]/20 via-[#1198DC] to-[#1198DC]/20 rounded-full"></div>
+              
+              {/* Animated flowing dots */}
+              <div className="absolute top-1/2 left-0 w-2 h-2 bg-[#1198DC] rounded-full -translate-y-1/2 shadow-lg shadow-[#1198DC]/50 animate-pulse"></div>
+              <div className="absolute top-1/2 left-1/3 w-2 h-2 bg-[#1198DC] rounded-full -translate-y-1/2 shadow-lg shadow-[#1198DC]/50 animate-pulse" style={{ animationDelay: '0.3s' }}></div>
+              <div className="absolute top-1/2 left-2/3 w-2 h-2 bg-[#1198DC] rounded-full -translate-y-1/2 shadow-lg shadow-[#1198DC]/50 animate-pulse" style={{ animationDelay: '0.6s' }}></div>
+              <div className="absolute top-1/2 right-0 w-2 h-2 bg-[#1198DC] rounded-full -translate-y-1/2 shadow-lg shadow-[#1198DC]/50 animate-pulse" style={{ animationDelay: '0.9s' }}></div>
+              
+              {/* Arrow indicators showing flow direction */}
+              <div className="absolute top-1/2 left-[25%] -translate-y-1/2 text-[#1198DC]/40 text-xs">
+                <i className="fas fa-chevron-right animate-pulse"></i>
+              </div>
+              <div className="absolute top-1/2 left-[50%] -translate-y-1/2 text-[#1198DC]/40 text-xs" style={{ animationDelay: '0.3s' }}>
+                <i className="fas fa-chevron-right animate-pulse"></i>
+              </div>
+              <div className="absolute top-1/2 left-[75%] -translate-y-1/2 text-[#1198DC]/40 text-xs" style={{ animationDelay: '0.6s' }}>
+                <i className="fas fa-chevron-right animate-pulse"></i>
+              </div>
+            </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 xs:gap-8 sm:gap-10">
               {[

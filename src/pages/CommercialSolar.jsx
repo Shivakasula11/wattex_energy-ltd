@@ -10,6 +10,7 @@ import review1 from "../assets/review1.png";
 import review2 from "../assets/review2.png";
 import review3 from "../assets/review3.png";
 
+
 const CommercialSolar = () => {
   const navigate = useNavigate();
 

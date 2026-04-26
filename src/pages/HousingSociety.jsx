@@ -154,7 +154,7 @@ const HousingSociety = () => {
                 ))}
               </div>
             </div>
-            <div className="relative">
+        <div className="relative lg:w-4/5 lg:mx-auto">
               <div className="rounded-[4rem] overflow-hidden shadow-4xl aspect-[4/5]">
                 <img
                   src={resortsImg}

@@ -12,7 +12,7 @@ import remoteinfra from "../assets/remoteinfra.png";
 
 import EcoResorts from "../assets/Ecoresorts.png";
 import Battery from "../assets/Battery-tech.png";
-import housingfaq from "../assets/housingfaq.png";
+import Housing2 from "../assets/housing2.png"
 const OffGridSolar = () => {
   return (
     <div className="bg-white text-[#0F172A]">
@@ -727,7 +727,7 @@ const OffGridSolar = () => {
             <div className="relative">
               <div className="rounded-[4rem] overflow-hidden shadow-2xl aspect-[4/5] relative">
                 <img
-                  src={housingfaq}
+                  src={Housing2}
                   className="w-full h-full object-cover"
                   alt="Lithium battery storage system for off-grid solar power"
                 />

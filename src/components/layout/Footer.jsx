@@ -411,49 +411,73 @@ const Footer = () => {
           </Box>
         </div>
 
-        {/* Contact Column */}
-        <div>
-          <Box
-            component="h4"
-            className="text-white font-black uppercase tracking-widest"
-            sx={{
-              fontSize: headingFontSize,
-              marginBottom: sectionHeadingMb,
-            }}
-          >
-            Contact
-          </Box>
-          <Box
-            component="p"
-            className="text-white/40 font-bold"
-            sx={{
-              fontSize: contactFontSize,
-              lineHeight: 1.8,
-              wordBreak: "break-word",
-            }}
-          >
-            Survey No:64, Building Number 9,
-            <br />
-            13th Floor, We Work,
-            <br />
-            K Raheja Mindspace, Madhapur,
-            <br />
-            Hyderabad, Telangana 500081
-          </Box>
-          <Box
-            component="p"
-            className="text-white/40 font-bold"
-            sx={{
-              fontSize: contactFontSize,
-              marginTop: isSmartwatch ? "10px" : "14px",
-              wordBreak: "break-word",
-            }}
-          >
-            9133066113
-            <br />
-            info@wattex.in
-          </Box>
-        </div>
+       {/* Contact Column */}
+<div>
+  <Box
+    component="h4"
+    className="text-white font-black uppercase tracking-widest"
+    sx={{
+      fontSize: headingFontSize,
+      marginBottom: sectionHeadingMb,
+    }}
+  >
+    Contact
+  </Box>
+  <Box
+    component="p"
+    className="text-white/40 font-bold"
+    sx={{
+      fontSize: contactFontSize,
+      lineHeight: 1.8,
+      wordBreak: "break-word",
+    }}
+  >
+    Survey No:64, Building Number 9,
+    <br />
+    13th Floor, We Work,
+    <br />
+    K Raheja Mindspace, Madhapur,
+    <br />
+    Hyderabad, Telangana 500081
+  </Box>
+  <Box
+    component="div"
+    className="text-white/40 font-bold"
+    sx={{
+      fontSize: contactFontSize,
+      marginTop: isSmartwatch ? "10px" : "14px",
+      wordBreak: "break-word",
+    }}
+  >
+    <Box
+      component="p"
+      sx={{
+        margin: 0,
+        marginBottom: isSmartwatch ? "6px" : "8px",
+        display: "flex",
+        alignItems: "center",
+        gap: isSmartwatch ? "6px" : "10px",
+      }}
+    >
+      <i className="fas fa-phone" style={{ fontSize: contactFontSize ,}}></i>
+  
+      9133066113
+    </Box>
+    <Box
+      component="p"
+      sx={{
+        margin: 0,
+        display: "flex",
+        alignItems: "center",
+        gap: isSmartwatch ? "6px" : "10px",
+        
+      }}
+    >
+      <i className="fas fa-envelope" style={{ fontSize: contactFontSize, }}></i>
+      info@wattex.in
+    </Box>
+  </Box>
+</div>
       </Box>
 
       {/* Copyright Bar */}

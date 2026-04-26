@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import housingfaq from '../../assets/housingfaq.png';
+
+
 const FAQ_TABS = [
   {
     id: 'general',
