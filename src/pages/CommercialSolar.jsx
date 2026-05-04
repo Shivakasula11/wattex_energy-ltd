@@ -340,7 +340,7 @@ const CommercialSolar = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-6 sm:gap-12 pt-4 sm:pt-8">
               <div className="text-center">
-                <div className="text-3xl sm:text-4xl md:text-4xl font-black text-black-400">
+                <div className="text-3xl sm:text-4xl md:text-4xl font-black text-white">
                   5+
                 </div>
                 <div className="text-[10px] font-black uppercase tracking-widest text-sky-400/90 mt-2">
@@ -349,7 +349,7 @@ const CommercialSolar = () => {
               </div>
               <div className="w-px h-16 bg-white/20 hidden md:block"></div>
               <div className="text-center">
-                <div className="text-2xl sm:text-4xl md:text-4xl font-black text-black-400">
+                <div className="text-2xl sm:text-4xl md:text-4xl font-black text-white">
                   50kW – 50MW
                 </div>
                 <div className="text-[10px] font-black uppercase tracking-widest text-sky-400/90 mt-2">
@@ -358,7 +358,7 @@ const CommercialSolar = () => {
               </div>
               <div className="w-px h-16 bg-white/20 hidden md:block"></div>
               <div className="text-center">
-                <div className="text-3xl sm:text-4xl md:text-4xl font-black text-black-400">
+                <div className="text-3xl sm:text-4xl md:text-4xl font-black text-white">
                   1-3 Weeks
                 </div>
                 <div className="text-[10px] font-black uppercase tracking-widest text-sky-400/90 mt-2">
