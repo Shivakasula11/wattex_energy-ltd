@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import coursel2 from "../../assets/coursel2.png";
 import Home1 from "../../assets/Home1.jpg";
 import Home2 from "../../assets/home2.jpg";
 import Home3 from "../../assets/Home3.jpeg";
+import Projects from "../../assets/projects.png"
 
 const slides = [
   {
@@ -11,7 +11,7 @@ const slides = [
     tag: "Residential Solar Solutions",
   },
   {
-    image: coursel2,
+    image: Projects,
     tag: "Commercial Solar Solutions",
   },
   {

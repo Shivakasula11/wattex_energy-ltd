@@ -9,6 +9,7 @@ import home2 from "../assets/home2.jpg";
 import review1 from "../assets/review1.png";
 import review2 from "../assets/review2.png";
 import review3 from "../assets/review3.png";
+import Commercial from  "../assets/commercial.png"
 
 
 const CommercialSolar = () => {
@@ -323,44 +324,44 @@ const CommercialSolar = () => {
       {/* Parallax Break */}
       <section
         className="relative h-[50vh] sm:h-[60vh] md:h-[70vh] bg-center bg-cover overflow-hidden"
-        style={{ backgroundImage: `url(${commercial3})` }}
+        style={{ backgroundImage: `url(${ Commercial})` }}
       >
-        <div className="absolute inset-0 bg-solar-deep/70 backdrop-blur-[2px]"></div>
+        {/* <div className="absolute inset-0 bg-solar-deep/20 backdrop-blur-[2px]"></div> */}
         <div className="relative z-10 h-full flex items-center justify-center text-center px-4 sm:px-6">
           <div className="max-w-4xl space-y-4 sm:space-y-6 animate-fade-in">
-            <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-white uppercase tracking-tighter leading-none">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-[#0F172A] uppercase tracking-tighter leading-none">
               Powering India's <br />
               <span className="text-solar-primary">Industrial Revolution</span>
             </h2>
             <div className="w-24 h-1 bg-solar-primary mx-auto"></div>
-            <p className="text-white/80 text-base sm:text-lg md:text-2xl font-medium leading-relaxed max-w-2xl mx-auto">
+            <p className="text-white/90 text-base sm:text-lg md:text-2xl font-medium leading-relaxed max-w-2xl mx-auto">
               From 50kW rooftops to 50MW ground-mount plants — we engineer solar
               at every scale.
             </p>
             <div className="flex flex-wrap justify-center gap-6 sm:gap-12 pt-4 sm:pt-8">
               <div className="text-center">
-                <div className="text-3xl sm:text-4xl md:text-4xl font-black text-white">
+                <div className="text-3xl sm:text-4xl md:text-4xl font-black text-black-400">
                   5+
                 </div>
-                <div className="text-[10px] font-black uppercase tracking-widest text-white/40 mt-2">
+                <div className="text-[10px] font-black uppercase tracking-widest text-sky-400/90 mt-2">
                   States Covered
                 </div>
               </div>
               <div className="w-px h-16 bg-white/20 hidden md:block"></div>
               <div className="text-center">
-                <div className="text-2xl sm:text-4xl md:text-4xl font-black text-white">
-                  50kW–50MW
+                <div className="text-2xl sm:text-4xl md:text-4xl font-black text-black-400">
+                  50kW – 50MW
                 </div>
-                <div className="text-[10px] font-black uppercase tracking-widest text-white/40 mt-2">
+                <div className="text-[10px] font-black uppercase tracking-widest text-sky-400/90 mt-2">
                   System Range
                 </div>
               </div>
               <div className="w-px h-16 bg-white/20 hidden md:block"></div>
               <div className="text-center">
-                <div className="text-3xl sm:text-4xl md:text-4xl font-black text-white">
+                <div className="text-3xl sm:text-4xl md:text-4xl font-black text-black-400">
                   1-3 Weeks
                 </div>
-                <div className="text-[10px] font-black uppercase tracking-widest text-white/40 mt-2">
+                <div className="text-[10px] font-black uppercase tracking-widest text-sky-400/90 mt-2">
                   Avg. Installation
                 </div>
               </div>

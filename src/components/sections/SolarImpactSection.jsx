@@ -45,10 +45,7 @@ const SolarImpactSection = () => (
               <img src={Battery} className="rounded-3xl shadow-2xl w-full aspect-[3/4] object-cover" alt="Commercial Solar" />
             </div>
           </div>
-          <div className="absolute -bottom-10 -right-10 bg-solar-deep p-10 rounded-[3rem] shadow-3xl max-w-xs space-y-4 hidden md:block">
-            <div className="text-4xl font-black text-solar-primary">100%</div>
-            <p className="text-white/60 font-bold uppercase tracking-widest text-[10px]">Renewable Energy Potential for your facility</p>
-          </div>
+  
         </div>
       </div>
     </div>
