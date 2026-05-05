@@ -6,7 +6,7 @@ import ParallaxSection from "../components/ui/ParallaxSection";
 import SolarProcessSection from "../components/sections/SolarProcessSection";
 import ServicesGrid from "../components/sections/ServicesGrid";
 import Home2 from "../assets/home2.jpg";
-import abhitowers from "../assets/kamakshi.png";
+
 import Urban  from "../assets/Urban-integration.jpg"
 const Home = () => {
   return (
