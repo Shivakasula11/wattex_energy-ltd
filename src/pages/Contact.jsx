@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { submitToGoogleSheets } from "../services/googleSheetsService";
 import { DEPARTMENTS } from "../data/navLinks";
 import { CONTACT_FAQS } from "../data/faqs";
 import SEOHead from "../components/seo/SEOHead";
@@ -25,8 +26,28 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
+
+    const payload = {
+      name: formData.clientName,
+      phone: formData.phone,
+      email: formData.email || "-",
+      mandal: "",
+      pincode: "-",
+      city: "-",
+      monthlyBill: "-",
+      propertyType: "-",
+      projectCategory: formData.sector || "-",
+      projectDescription: formData.brief || "-",
+    };
+
+    await submitToGoogleSheets(payload);
+
+    setIsLoading(false);
     setSubmitted(true);
   };
 
@@ -458,7 +479,7 @@ const Contact = () => {
                         {/* Submit Button */}
                         <div className="pt-4">
                           <button
-                            type="submit"
+                            type="submit" disabled={isLoading}
                             className="w-full bg-blue-600 hover:bg-blue-700 text-white py-5 px-8 rounded-2xl font-bold text-sm shadow-[0_10px_40px_-10px_rgba(37,99,235,0.4)] hover:shadow-[0_20px_60px_-10px_rgba(37,99,235,0.5)] transition-all duration-300 flex items-center justify-center gap-3 group relative overflow-hidden"
                           >
                             <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
