@@ -4,7 +4,7 @@
 // ============================================================
 
 const APPS_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbyWUOI4W16LFSAsq-aH_L_Z_l21QefzcLujFYauN_KT-MTHU4Ht_s-vVIO_X605sneVnQ/exec";
+  "https://script.google.com/macros/s/AKfycbyD81A_Acm5CKM0bxXa2xWgqqKY136fg_OltiU0FviNHal8pihFItEV10G_7TdegQfEUQ/exec";
 
 /**
  * Submit form data to Google Sheets via Apps Script.
