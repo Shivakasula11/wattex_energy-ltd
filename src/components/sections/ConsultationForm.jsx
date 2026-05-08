@@ -23,8 +23,8 @@ const ConsultationForm = () => {
     const payload = {
       name: form.fullName.value.trim(),
       phone: form.phone.value.trim(),
-      email: "-",
-      mandal: "",           // left blank — admin fills manually in sheet
+      email: form.email.value.trim(),
+      mandal: "",
       pincode: form.pinCode.value.trim(),
       city: form.city.value.trim() || "-",
       monthlyBill: billRange || "-",
@@ -51,7 +51,8 @@ const ConsultationForm = () => {
               Request Sent!
             </h2>
             <p className="text-slate-500 font-medium">
-              Thank you for your interest. A Wattex expert will reach out to you shortly.
+              Thank you for your interest. A Wattex expert will reach out to
+              you shortly. Check your email for confirmation.
             </p>
             <button
               onClick={() => setIsSubmitted(false)}
@@ -87,6 +88,7 @@ const ConsultationForm = () => {
             <div className="bg-white rounded-[2rem] p-8 lg:p-12 shadow-4xl">
               <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="space-y-6">
+
                   {/* Full Name */}
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-slate-700">
@@ -96,6 +98,7 @@ const ConsultationForm = () => {
                       required
                       type="text"
                       name="fullName"
+                      placeholder="Enter your full name"
                       className="w-full bg-slate-50 border border-slate-200 p-4 rounded-xl focus:ring-2 focus:ring-solar-sky outline-none transition-all font-medium"
                     />
                   </div>
@@ -103,12 +106,27 @@ const ConsultationForm = () => {
                   {/* WhatsApp Number */}
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-slate-700">
-                      WhatsApp number <span className="text-solar-primary">*</span>
+                      WhatsApp Number <span className="text-solar-primary">*</span>
                     </label>
                     <input
                       required
                       type="tel"
                       name="phone"
+                      placeholder="Enter your WhatsApp number"
+                      className="w-full bg-slate-50 border border-slate-200 p-4 rounded-xl focus:ring-2 focus:ring-solar-sky outline-none transition-all font-medium"
+                    />
+                  </div>
+
+                  {/* Email — NEW FIELD */}
+                  <div className="space-y-2">
+                    <label className="text-sm font-bold text-slate-700">
+                      Email Address <span className="text-solar-primary">*</span>
+                    </label>
+                    <input
+                      required
+                      type="email"
+                      name="email"
+                      placeholder="Enter your email address"
                       className="w-full bg-slate-50 border border-slate-200 p-4 rounded-xl focus:ring-2 focus:ring-solar-sky outline-none transition-all font-medium"
                     />
                   </div>
@@ -163,12 +181,13 @@ const ConsultationForm = () => {
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label className="text-sm font-bold text-slate-700">
-                        Pin code <span className="text-solar-primary">*</span>
+                        Pin Code <span className="text-solar-primary">*</span>
                       </label>
                       <input
                         required
                         type="text"
                         name="pinCode"
+                        placeholder="500001"
                         className="w-full bg-slate-50 border border-slate-200 p-4 rounded-xl focus:ring-2 focus:ring-solar-sky outline-none transition-all font-medium"
                       />
                     </div>
@@ -179,10 +198,12 @@ const ConsultationForm = () => {
                       <input
                         type="text"
                         name="city"
+                        placeholder="Hyderabad"
                         className="w-full bg-slate-50 border border-slate-200 p-4 rounded-xl focus:ring-2 focus:ring-solar-sky outline-none transition-all font-medium"
                       />
                     </div>
                   </div>
+
                 </div>
 
                 <button
