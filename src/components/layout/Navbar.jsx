@@ -7,7 +7,6 @@ import {
   EXPLORE_ITEMS,
 } from "../../data/navLinks";
 import useScrollPosition from "../hooks/useScrollPosition";
-// import Wattex from "../../assets/wattexlogo.png";
 
 const Navbar = ({ forceSolid = false }) => {
   const isScrolled = useScrollPosition(20);
@@ -19,6 +18,7 @@ const Navbar = ({ forceSolid = false }) => {
   const offeringsDropdownRef = useRef(null);
   const solutionsDropdownRef = useRef(null);
   const exploreDropdownRef = useRef(null);
+  const isMobileMenuOpenRef = useRef(isMobileMenuOpen);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -26,6 +26,7 @@ const Navbar = ({ forceSolid = false }) => {
   // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
+      if (isMobileMenuOpenRef.current) return;
       if (
         offeringsDropdownRef.current &&
         !offeringsDropdownRef.current.contains(event.target)
@@ -49,6 +50,9 @@ const Navbar = ({ forceSolid = false }) => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  useEffect(() => {
+    isMobileMenuOpenRef.current = isMobileMenuOpen;
+  }, [isMobileMenuOpen]);
   // Close mobile menu on route change
   useEffect(() => {
     setIsMobileMenuOpen(false);
@@ -137,7 +141,11 @@ const Navbar = ({ forceSolid = false }) => {
             onMouseLeave={() => setIsOfferingsOpen(false)}
           >
             <button
-              onClick={() => setIsOfferingsOpen(!isOfferingsOpen)}
+              onTouchEnd={(e) => {
+                e.preventDefault();
+                setIsOfferingsOpen((v) => !v);
+              }}
+              onClick={() => setIsOfferingsOpen((v) => !v)}
               className={`flex items-center gap-2 hover:text-solar-primary transition-all duration-300 py-2 ${isOfferingsOpen ? "text-solar-primary" : ""}`}
             >
               Solar Services
@@ -183,7 +191,11 @@ const Navbar = ({ forceSolid = false }) => {
             onMouseLeave={() => setIsSolutionsOpen(false)}
           >
             <button
-              onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}
+              onTouchEnd={(e) => {
+                e.preventDefault();
+                setIsSolutionsOpen((v) => !v);
+              }}
+              onClick={() => setIsSolutionsOpen((v) => !v)}
               className={`flex items-center gap-2 hover:text-solar-primary transition-all duration-300 py-2 ${isSolutionsOpen ? "text-solar-primary" : ""}`}
             >
               Solar Solutions
@@ -241,7 +253,11 @@ const Navbar = ({ forceSolid = false }) => {
             onMouseLeave={() => setIsExploreOpen(false)}
           >
             <button
-              onClick={() => setIsExploreOpen(!isExploreOpen)}
+              onTouchEnd={(e) => {
+                e.preventDefault();
+                setIsExploreOpen((v) => !v);
+              }}
+              onClick={() => setIsExploreOpen((v) => !v)}
               className={`flex items-center gap-2 hover:text-solar-primary transition-all duration-300 py-2 ${isExploreOpen ? "text-solar-primary" : ""}`}
             >
               Explore
@@ -302,7 +318,11 @@ const Navbar = ({ forceSolid = false }) => {
           {/* Mobile Solar Services */}
           <div className="space-y-4">
             <button
-              onClick={() => setIsOfferingsOpen(!isOfferingsOpen)}
+              onTouchEnd={(e) => {
+                e.preventDefault();
+                setIsOfferingsOpen((v) => !v);
+              }}
+              onClick={() => setIsOfferingsOpen((v) => !v)}
               className="w-full text-xl font-black text-solar-deep flex items-center justify-between"
             >
               Solar Services
@@ -329,7 +349,11 @@ const Navbar = ({ forceSolid = false }) => {
           {/* Mobile Solar Solutions */}
           <div className="space-y-4">
             <button
-              onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}
+              onTouchEnd={(e) => {
+                e.preventDefault();
+                setIsSolutionsOpen((v) => !v);
+              }}
+              onClick={() => setIsSolutionsOpen((v) => !v)}
               className="w-full text-xl font-black text-solar-deep flex items-center justify-between"
             >
               Solar Solutions
@@ -368,7 +392,11 @@ const Navbar = ({ forceSolid = false }) => {
           {/* Mobile Explore */}
           <div className="space-y-4">
             <button
-              onClick={() => setIsExploreOpen(!isExploreOpen)}
+              onTouchEnd={(e) => {
+                e.preventDefault();
+                setIsExploreOpen((v) => !v);
+              }}
+              onClick={() => setIsExploreOpen((v) => !v)}
               className="w-full text-xl font-black text-solar-deep flex items-center justify-between"
             >
               Explore
