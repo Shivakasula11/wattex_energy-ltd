@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Home1 from "../../assets/Home1.jpg";
 import Home2 from "../../assets/home2.jpg";
 import Home3 from "../../assets/Home3.jpeg";
-import Projects from "../../assets/projects.png"
+import Projects from "../../assets/projects.png";
 
 const slides = [
   {
@@ -60,6 +60,9 @@ const HeroCarousel = () => {
         >
           <img
             src={slide.image}
+            fetchpriority={index === 0 ? "high" : "low"}
+            loading={index === 0 ? "eager" : "eager"}
+            decoding={index === 0 ? "sync" : "async"}
             className="w-full h-full object-cover object-[70%_center] sm:object-[60%_center] md:object-center scale-105"
             alt={slide.tag}
           />
@@ -71,8 +74,6 @@ const HeroCarousel = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1a]/10 via-transparent to-transparent z-10"></div>
 
       {/* Main Content */}
-
-
 
       <div className="container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 relative z-20 h-full flex flex-col justify-center pb-24 xs:pb-32 sm:pb-0">
         <div className="max-w-2xl">

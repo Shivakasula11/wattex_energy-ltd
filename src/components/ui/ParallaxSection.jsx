@@ -1,11 +1,19 @@
 import React from 'react';
 
-const ParallaxSection = ({ image, title, subtitle }) => (
-  <section
-    className="relative h-[50vh] md:h-[70vh] flex items-center justify-center bg-fixed bg-center bg-cover overflow-hidden"
-    style={{ backgroundImage: `url(${image})` }}
-  >
-    <div className="absolute inset-0 bg-solar-deep/50 backdrop-blur-[1px]"></div>
+const ParallaxSection = ({ image, title, subtitle, priority = false }) => (
+  <section className="relative h-[50vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
+    {/* 🔧 Real <img> so fetchPriority actually applies */}
+    <img
+      src={image}
+      alt=""
+      aria-hidden="true"
+      fetchpriority={priority ? 'high' : 'auto'}
+      loading={priority ? 'eager' : 'lazy'}
+      decoding="async"
+      className="absolute inset-0 w-full h-full object-cover md:bg-fixed"
+      style={{ zIndex: 0 }}
+    />
+    <div className="absolute inset-0 bg-solar-deep/50 backdrop-blur-[1px] z-[1]"></div>
     <div className="relative z-10 text-center px-6 max-w-4xl animate-fade-in">
       <h2 className="text-4xl md:text-7xl font-white text-white mb-6 uppercase tracking-tighter leading-none">
         {title}
