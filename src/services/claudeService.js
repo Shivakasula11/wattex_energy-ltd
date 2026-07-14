@@ -6,7 +6,6 @@ STRICT RULES:
 - NEVER guess or make up facts. If you don't know, say: "I don't have that detail — please call us at +91 91330 66113 or email info@wattexenergy.in"
 - Never mention competitors.
 - Keep responses to 2-4 sentences unless the user asks for more detail.
-- Respond in the same language the user writes in (English, Telugu, or Hindi).
 
 THINGS THAT DO NOT EXIST — NEVER MENTION THESE:
 - Wattex does NOT have a mobile app on Google Play Store or Apple App Store.
@@ -83,16 +82,35 @@ OUT OF SCOPE:
 - If asked anything unrelated to solar or Wattex, say: "I'm only able to help with solar energy and Wattex services. Feel free to contact our team directly at +91 91330 66113!"
 `;
 
+// 🔧 CHANGE 1/3 — Per-language directive appended to the system prompt.
+// Overrides the old "match the user's language" rule because the user has now
+// explicitly picked a language via the selector. Keep phone numbers/emails
+// unchanged across languages.
+const LANG_DIRECTIVES = {
+  en: `LANGUAGE OVERRIDE: The user has selected English as their preferred language. Respond ONLY in English, regardless of what language they type in. Keep phone numbers, emails, and website URLs in their original form.`,
+  te: `LANGUAGE OVERRIDE: The user has selected Telugu (తెలుగు) as their preferred language. Respond ONLY in Telugu script (తెలుగు లిపిలో మాత్రమే జవాబు ఇవ్వండి), regardless of what language they type in. Keep phone numbers, emails, and website URLs in their original form. Numbers like ₹1.1 Lakhs, 3 kW etc. stay in numeric form.`,
+  hi: `LANGUAGE OVERRIDE: The user has selected Hindi (हिन्दी) as their preferred language. Respond ONLY in Hindi using Devanagari script (केवल हिन्दी में देवनागरी लिपि में जवाब दें), regardless of what language they type in. Keep phone numbers, emails, and website URLs in their original form. Numbers like ₹1.1 Lakhs, 3 kW etc. stay in numeric form.`,
+};
 
+// 🔧 CHANGE 2/3 — Localized fallback for when the API call itself fails.
+const FALLBACK_MESSAGES = {
+  en: "I'm experiencing a brief connection issue. Please feel free to call our experts directly at +91 91330 66113 or email info@wattexenergy.in.",
+  te: "క్షమించండి, ప్రస్తుతం చిన్న కనెక్షన్ సమస్య ఉంది. దయచేసి మా నిపుణులను +91 91330 66113 వద్ద నేరుగా కాల్ చేయండి లేదా info@wattexenergy.in కు ఇమెయిల్ చేయండి.",
+  hi: "क्षमा करें, अभी एक छोटी कनेक्शन समस्या है। कृपया हमारे विशेषज्ञों को +91 91330 66113 पर सीधे कॉल करें या info@wattexenergy.in पर ईमेल करें।",
+};
 
+const API_KEY = import.meta.env.VITE_GROQ_API_KEY;
 
-
-const API_KEY = import.meta.env.VITE_GROQ_API_KEY; 
-
-export async function getSolarBotResponse(userMessage, history) {
+// 🔧 CHANGE 3/3 — New `language` parameter (defaults to 'en' for backward safety).
+// System prompt now = base instruction + language directive.
+// Error fallback picks the localized version.
+export async function getSolarBotResponse(userMessage, history, language = 'en') {
   try {
+    const langKey = LANG_DIRECTIVES[language] ? language : 'en';
+    const systemContent = SYSTEM_INSTRUCTION + '\n\n' + LANG_DIRECTIVES[langKey];
+
     const messages = [
-      { role: 'system', content: SYSTEM_INSTRUCTION },
+      { role: 'system', content: systemContent },
       ...history.map((h) => ({
         role: h.role === 'assistant' ? 'assistant' : 'user',
         content: h.content,
@@ -107,9 +125,9 @@ export async function getSolarBotResponse(userMessage, history) {
         'Authorization': `Bearer ${API_KEY}`,
       },
       body: JSON.stringify({
-        model: 'llama-3.3-70b-versatile', 
-        max_tokens: 512,                   
-        temperature: 0.3,                  
+        model: 'llama-3.3-70b-versatile',
+        max_tokens: 512,
+        temperature: 0.3,
         messages: messages,
       }),
     });
@@ -121,10 +139,11 @@ export async function getSolarBotResponse(userMessage, history) {
     }
 
     const data = await response.json();
-    return data.choices?.[0]?.message?.content || "I'm sorry, I couldn't process that. Could you please rephrase?";
+    return data.choices?.[0]?.message?.content || FALLBACK_MESSAGES[langKey];
 
   } catch (error) {
     console.error('Groq API Error:', error);
-    return "I'm experiencing a brief connection issue. Please feel free to call our experts directly at +91 91330 66113 or email info@wattexenergy.in.";
+    const langKey = FALLBACK_MESSAGES[language] ? language : 'en';
+    return FALLBACK_MESSAGES[langKey];
   }
 }
